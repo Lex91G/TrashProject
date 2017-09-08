@@ -272,6 +272,9 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_LayoutEmployee.cshtml" />
+    <Content Include="Views\Shared\_LayoutClient.cshtml" />
+    <Content Include="Views\Home\Payments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
