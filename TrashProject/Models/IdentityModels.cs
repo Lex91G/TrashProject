@@ -29,5 +29,9 @@ namespace TrashProject.Models
         {
             return new ApplicationDbContext();
         }
+        public DbSet<Address> Addresses { get; set; }
+        
+
     }
+    
 }

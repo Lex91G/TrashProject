@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Helpers;
+using TrashProject.Models;
+
 
 namespace TrashProject.Controllers
 {
     public class HomeController : Controller
     {
+        ApplicationDbContext Context;
+        public HomeController()
+        {
+            Context = new ApplicationDbContext();
+        }
         public ActionResult Index()
         {
             return View();
@@ -26,11 +34,24 @@ namespace TrashProject.Controllers
 
             return View();
         }
-        public ActionResult OurClients()
+        [HttpGet]
+        public ActionResult SetUpPickUps()
         {
-            ViewBag.Message = "Clients";
+            Address address = new Address();
+            ViewBag.Message = "Set up garbage pickups";
+            
 
-            return View();
+            return View(address);
+        }
+        [HttpPost]
+        public ActionResult SetUpPickUps(Address address)
+        {
+            Context.Addresses.Add(address);
+            Context.SaveChanges();
+            
+
+
+            return RedirectToAction("Payment");
         }
         public ActionResult Routes()
         {
@@ -40,12 +61,24 @@ namespace TrashProject.Controllers
         }
         public ActionResult Payments()
         {
+            PayBill payment = new PayBill();
             ViewBag.Message = "Make Payments here";
 
-            return View();
+            return View(payment);
         }
-      
+        public ActionResult Payments(PayBill payment)
+        {
+            
+            Context.SaveChanges();
+
+
+
+            return RedirectToAction("Home");
+        }
 
 
     }
+
+
+
 }
