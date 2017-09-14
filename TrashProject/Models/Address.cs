@@ -30,10 +30,13 @@ namespace TrashProject.Models
             public string ZipCode { get; set; }
 
             [Display(Name = "Date for pickup")]
-            public string DateForPickup { get; set; }
+            public DateTime DateForPickup { get; set; }
 
-        
+            [Display(Name = "How Many pickups for this address would you like to purchase")]
+            public string HowManyPickUps { get; set; }
 
+
+        public ApplicationUser User { get; set; }
 
 
     }

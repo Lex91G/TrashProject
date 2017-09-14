@@ -1,0 +1,65 @@
+﻿
+
+<!DOCTYPE html>
+
+      @foreach (var i in ViewBag.addresses)
+      {
+
+        <table>
+            <tr>
+                <th>
+                    First Name:
+                </th>
+                <th>
+                    Last Name: 
+                </th>
+                <th>
+                    Address:
+                </th>
+                <th>
+                    City:
+                </th>
+                <th>
+                    State:
+                </th>
+                <th>
+                    Zip Code:
+                </th>
+                <th>
+                    Dates:
+                </th>
+                <th>
+                    Pick Ups:
+                </th>
+                
+            </tr>
+            <tr>
+                <td>
+                    @i.FirstName
+                </td>
+                <td>
+                    @i.LastName
+                </td>
+                <td>
+                    @i.HomeAddress
+                </td>
+                <td>
+                    @i.City
+                </td>
+                <td>
+                    @i.State
+                </td>
+                <td>
+                    @i.ZipCode
+                </td>
+                <td>
+                    @i.DateForPickup
+                </td>
+                <td>
+                    @i.HowManyPickUps
+                </td>
+            </tr>
+        </table>
+
+      }
+

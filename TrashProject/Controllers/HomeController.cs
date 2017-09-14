@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Helpers;
 using TrashProject.Models;
-
+using Microsoft.AspNet.Identity;
 
 namespace TrashProject.Controllers
 {
@@ -37,43 +37,67 @@ namespace TrashProject.Controllers
         [HttpGet]
         public ActionResult SetUpPickUps()
         {
-            Address address = new Address();
+            Address newaddress = new Address();
             ViewBag.Message = "Set up garbage pickups";
             
 
-            return View(address);
+            return View(newaddress);
         }
         [HttpPost]
         public ActionResult SetUpPickUps(Address address)
         {
+            string UserIDName = User.Identity.GetUserName();
+            var user = (from x in Context.Users where x.UserName == UserIDName select x).First();
+            address.User = user;
             Context.Addresses.Add(address);
             Context.SaveChanges();
             
 
 
-            return RedirectToAction("Payment");
+            return RedirectToAction("Index");
         }
+        [HttpGet]
         public ActionResult Routes()
         {
+
             ViewBag.Message = "The journey";
 
             return View();
         }
-        public ActionResult Payments()
-        {
-            PayBill payment = new PayBill();
-            ViewBag.Message = "Make Payments here";
-
-            return View(payment);
-        }
-        public ActionResult Payments(PayBill payment)
+        [HttpPost]
+        public ActionResult Routes(Routes route)
         {
             
+            ViewBag.addresses = (from x in Context.Addresses where x.ZipCode == route.Zipcode select x).ToList();
+            
+           
+
+            return View("Routes2");
+        }
+        public ActionResult Routes2()
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Payments()
+        {
+            string UserIDName= User.Identity.GetUserName();
+            var user = (from x in Context.Users where x.UserName == UserIDName select x).First();
+            List<Address> Addresses = (from x in Context.Addresses.Include("User") where x.User.Id == user.Id select x).ToList();
+            
+            //ViewBag.Meme = "Make Payments here"
+
+            return View(Addresses);
+        }
+        [HttpPost]
+        public ActionResult Payments(UserLoginInfo user)
+        {
+
             Context.SaveChanges();
 
 
 
-            return RedirectToAction("Home");
+            return RedirectToAction("Index");
         }
 
 

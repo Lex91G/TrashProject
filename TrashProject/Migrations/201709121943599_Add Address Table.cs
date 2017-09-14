@@ -19,7 +19,8 @@ namespace TrashProject.Migrations
                         State = c.String(),
                         ZipCode = c.String(),
                         DateForPickup = c.String(),
-                    })
+                       
+                })
                 .PrimaryKey(t => t.Id);
             
         }

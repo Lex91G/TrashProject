@@ -1,45 +1,70 @@
-﻿@model TrashProject.Models.PayBill
+﻿@model List<TrashProject.Models.Address>
 
 <!DOCTYPE html>
 
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+    
+
 @using (Html.BeginForm())
 {
-    <div class="form-group">
-        @Html.LabelFor(model => model.SetPickUps, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.SetPickUps, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.SetPickUps, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.CreditCardNumber, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.CreditCardNumber, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.CreditCardNumber, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.ExperationDate, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.ExperationDate, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ExperationDate, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.CVC, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.CVC, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.CVC, "", new { @class = "text-danger" })
-        </div>
-    </div>
-   
+    foreach (var i in Model)
+    {
+       
+        <table>
+            <tr>
+                <th>
+                    Address:
+                </th>
+                <th>
+                    Pick Ups:
+                </th>
+                <th>
+                    How much you owe:
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    @i.HomeAddress
+                </td>
+                <td>
+                    @i.HowManyPickUps
+                </td>
+                <td>
+                   @(int.Parse(i.HowManyPickUps) * 30)
+                </td>
+            </tr>
+        </table>
+
+    }
 
 
 
+    <footer>
+        1 pickup = 30 dollars
+        2 pickups = 60 dollars
+        3 pickups = 90 dollars
+        ect.
+        
+    </footer>
 
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
-        </div>
-    </div>
+}

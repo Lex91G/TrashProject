@@ -210,12 +210,29 @@
     <Compile Include="Migrations\201709121943599_Add Address Table.Designer.cs">
       <DependentUpon>201709121943599_Add Address Table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709131339433_%27updating columm.cs" />
+    <Compile Include="Migrations\201709131339433_%27updating columm.Designer.cs">
+      <DependentUpon>201709131339433_%27updating columm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709131532527_%27work%27.cs" />
+    <Compile Include="Migrations\201709131532527_%27work%27.Designer.cs">
+      <DependentUpon>201709131532527_%27work%27.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709131829470_changed string to datetime from string.cs" />
+    <Compile Include="Migrations\201709131829470_changed string to datetime from string.Designer.cs">
+      <DependentUpon>201709131829470_changed string to datetime from string.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709131921105_did alot.cs" />
+    <Compile Include="Migrations\201709131921105_did alot.Designer.cs">
+      <DependentUpon>201709131921105_did alot.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PayBill.cs" />
+    <Compile Include="Models\Routes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -283,6 +300,8 @@
     <Content Include="Views\Shared\_LayoutClient.cshtml" />
     <Content Include="Views\Home\Payments.cshtml" />
     <Content Include="Views\Home\SetUpPickUps.cshtml" />
+    <Content Include="Views\Home\Routes.cshtml" />
+    <Content Include="Views\Home\Routes2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -301,6 +320,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709121943599_Add Address Table.resx">
       <DependentUpon>201709121943599_Add Address Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709131339433_%27updating columm.resx">
+      <DependentUpon>201709131339433_%27updating columm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709131532527_%27work%27.resx">
+      <DependentUpon>201709131532527_%27work%27.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709131829470_changed string to datetime from string.resx">
+      <DependentUpon>201709131829470_changed string to datetime from string.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709131921105_did alot.resx">
+      <DependentUpon>201709131921105_did alot.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

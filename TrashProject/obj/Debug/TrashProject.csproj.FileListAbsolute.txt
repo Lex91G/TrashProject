@@ -82,3 +82,8 @@ c:\users\alex g\documents\visual studio 2015\Projects\TrashProject\TrashProject\
 c:\users\alex g\documents\visual studio 2015\Projects\TrashProject\TrashProject\obj\Debug\TrashProject.Migrations.updatedatabase.resources
 c:\users\alex g\documents\visual studio 2015\Projects\TrashProject\TrashProject\obj\Debug\TrashProject.csproj.GenerateResource.Cache
 C:\Users\Alex G\documents\visual studio 2015\Projects\TrashProject\TrashProject\obj\Debug\TrashProject.Migrations.AddAddressTable.resources
+C:\Users\Alex G\documents\visual studio 2015\Projects\TrashProject\TrashProject\obj\Debug\TrashProject.csprojResolveAssemblyReference.cache
+C:\Users\Alex G\documents\visual studio 2015\Projects\TrashProject\TrashProject\obj\Debug\TrashProject.Migrations.updatingcolumm.resources
+C:\Users\Alex G\documents\visual studio 2015\Projects\TrashProject\TrashProject\obj\Debug\TrashProject.Migrations.work.resources
+C:\Users\Alex G\documents\visual studio 2015\Projects\TrashProject\TrashProject\obj\Debug\TrashProject.Migrations.changedstringtodatetimefromstring.resources
+C:\Users\Alex G\documents\visual studio 2015\Projects\TrashProject\TrashProject\obj\Debug\TrashProject.Migrations.didalot.resources
