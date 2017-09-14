@@ -1,1 +1,1 @@
-# TrashPickUpProject
+# TrashProject
